@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #023d47;
+}
+
+/* Header */
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: #023d47;
+    color: white;
+}
+
+header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    color: #ccc;
+}
+/* Search Box */
+
+.search-box {
+    text-align: center;
+    margin: 20px auto;
+}
+
+#searchInput {
+    width: 80%;
+    max-width: 500px;
+    padding: 14px 20px;
+
+    border: 2px solid #ddd;
+    border-radius: 30px;
+
+    font-size: 16px;
+    outline: none;
+
+    transition: 0.3s;
+}
+
+#searchInput:focus {
+    border-color: #222;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+/* Search */
+
+.search-box {
+    text-align: center;
+    margin: 30px 0 20px;
+}
+
+.search-box input {
+    width: 350px;
+    max-width: 90%;
+
+    padding: 14px 20px;
+
+    border: 1px solid #ccc;
+    border-radius: 30px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #023d47;
+}
+
+/* Filters */
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    margin-bottom: 30px;
+
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    border: none;
+
+    padding: 10px 22px;
+
+    border-radius: 25px;
+
+    background: #ddd;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.filter-btn:hover {
+    background: #023d47;
+    color: white;
+}
+
+.filter-btn.active {
+    background: #023d47;
+    color: white;
+}
+
+/* Gallery */
+
+.gallery {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.gallery-item {
+    background: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+    cursor: pointer;
+
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.4s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.caption {
+    padding: 12px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+/* Lightbox */
+
+.lightbox {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+#lightbox-img {
+    max-width: 80%;
+    max-height: 80%;
+
+    border-radius: 10px;
+}
+
+/* Lightbox Buttons */
+
+.close,
+.prev,
+.next {
+    position: absolute;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 45px;
+
+    transition: 0.3s;
+}
+
+.close {
+    top: 20px;
+    right: 30px;
+}
+
+.prev {
+    left: 30px;
+}
+
+.next {
+    right: 30px;
+}
+
+.close:hover,
+.prev:hover,
+.next:hover {
+    transform: scale(1.2);
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+
+    margin-top: 40px;
+
+    padding: 25px;
+
+    background: #023d47;
+
+    color: white;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .gallery-item img {
+        height: 250px;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+}
+/* Gallery Cards */
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Zoom effect */
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* Caption */
+
+.caption {
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    background: white;
+    color: #222;
+}
+
+/* Card hover */
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
+.gallery-item.hide {
+    display: none;
+}
